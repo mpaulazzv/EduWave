@@ -172,3 +172,7 @@
 .btn_next box-icon{
   fill:white;
 }
+
+.xd:hover{
+  cursor: pointer;
+}

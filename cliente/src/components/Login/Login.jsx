@@ -9,7 +9,7 @@ import { postLoginAdminRequest } from "../../api/admin.api";
 const Login = () => {
 
     const roles = [
-        { label: "Empleado", value: 'Empleado' },
+        { label: "Estudiante", value: 'Estudiante' },
         { label: 'Instructor', value: 'Instructor' },
         { label: 'Administrador', value: 'Administrador' }
     ]
@@ -59,7 +59,7 @@ const Login = () => {
                 })
                 
                     .then(() => {
-                        localStorage.setItem('UserToken', JSON.stringify({ token: data.accessToken, rol: 'Empleado', cedula: cedula }));
+                        localStorage.setItem('UserToken', JSON.stringify({ token: data.accessToken, rol: 'Estudiante', cedula: cedula }));
                         window.location.href = `EduWave/${data.accessToken}`;
                     });
                 
@@ -186,7 +186,7 @@ const Login = () => {
                     <span className="l-izquierda"></span>
                 </div>
                 <div className="derecha">
-                    <form onSubmit={rol.value === "Empleado" ? (handleLoginEstudiante) : rol.value === "Administrador" ? (handleLoginAdmin) : handleLoginProfesor}>
+                    <form onSubmit={rol.value === "Estudiante" ? (handleLoginEstudiante) : rol.value === "Administrador" ? (handleLoginAdmin) : handleLoginProfesor}>
                         <div className="titulo">
                             <h2 className="h2-login">Login</h2>
                             <span className="line"></span>

@@ -5,6 +5,7 @@ import SideBar from '../SideBar/SideBar';
 import { lista_lecciones } from '../../Data';
 import Imagen from '../../assets/imagen_mas.png'
 import Hombre from '../../assets/hombre.jpg';
+import Youtube from '../../assets/youtube.avif';
 import { leccionDetallada, lista_temas } from '../../Data';
 import 'boxicons';
 import { useParams } from 'react-router-dom';
@@ -12,6 +13,14 @@ import { useParams } from 'react-router-dom';
 
 const LeccionDetallada = () => {
     const [token, setToken] = useState(useParams().accessToken);
+
+const clikQuiz = () =>{
+    window.location.href = `/EduWave/${token}/tarea/examen`;
+}
+
+const clikTarea = () =>{
+    window.location.href = `/EduWave/${token}/tarea`;
+}
 
 
     return (
@@ -26,17 +35,19 @@ const LeccionDetallada = () => {
                         <h1 className="nombre_leccion_det">{leccionDetallada.nombre}</h1>
                         <p className="p_leccion">{leccionDetallada.descripcion_corta} 
                         <br/> {leccionDetallada.descripcion_corta}
-                        <br/><br/>{leccionDetallada.descripcion_larga}
+                        <br/>{leccionDetallada.descripcion_corta}
+                        <br/>{leccionDetallada.descripcion_corta}
                         </p>
+                        <img src={Youtube}></img>
                     </div>
-                    <div className="profesor">
-                        <div className="foto_prof">
-                            <img src={Hombre}></img>
-                        </div>
-                        <div className="detalles_prof">
-                            <h5>Nombre profesor</h5>
-                            <p>Profesion</p>
-                        </div>
+                    <div className="tareas_l_detallada" onClick={clikQuiz}>
+                       <h3 classname="nonmbre_tema xd">
+                            Quiz lección
+                       </h3>
+                       <br></br>
+                       <h3 className="nonmbre_tema xd" onClick={clikTarea}>
+                            Tarea Lección
+                       </h3>
                     </div>
                 </div>
                 <div className="adicionales">

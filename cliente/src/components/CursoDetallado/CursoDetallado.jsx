@@ -6,6 +6,7 @@ import { lista_lecciones } from '../../Data';
 import Imagen from '../../assets/imagen_mas.png'
 import Hombre from '../../assets/hombre.jpg';
 import { useParams } from 'react-router-dom';
+import Progreso from '../../assets/progreso.jpeg'
 
 const CursoDetallado = () => {
 
@@ -67,6 +68,11 @@ const CursoDetallado = () => {
                                 </div>
                             );
                         })}
+                        <div>
+                            <img src={Progreso}>
+
+                            </img>
+                        </div>
                     </div>
                 </div>
                 <div className="calendario">

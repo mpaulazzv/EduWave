@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './PerfilUsuario.css';
 import profileImage from '../../assets/john_usuario.png';  // Ruta al ícono
+import Dashboard from '../../assets/f2.jpeg'
+import D2 from '../../assets/d2.jpeg'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import SideBar from '../SideBar/SideBar';
@@ -121,6 +123,14 @@ const PerfilUsuario = () => {
             <p>Aquí se mostrarán los certificados obtenidos.</p>
           </div>
         );
+      
+      case 'perfil':
+        return(
+          <div className="contenido">
+            <img class="img_d" src={Dashboard} width="700px"></img>
+            <img class="img_d" src={D2} width="700px"></img>
+          </div>
+        );
       default:
         return null;
     }
@@ -154,6 +164,9 @@ const PerfilUsuario = () => {
               </li>
               <li className={activeTab === 'certificados' ? 'activo' : ''} onClick={() => setActiveTab('certificados')}>
                 Certificados
+              </li>
+              <li className={activeTab === 'perfil' ? 'activo' : ''} onClick={() => setActiveTab('perfil')}>
+                Perfil
               </li>
             </ul>
           </nav>
